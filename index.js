@@ -8,6 +8,8 @@ let principal = 200000;
 let interestRate = 0.05;
 let years = 30;
 let name = "Chris";
+let creditScore = 800;
+let interest = 0.4;
 
 // console.log(name) test-run on name.
 
@@ -89,7 +91,7 @@ function mortgageCalculator(){
 
     var output = mortgageCalculator ("Chris")
     console.log(output) 
-    
+
 // 🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
 
@@ -135,6 +137,44 @@ Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by
 */
 
 
+
+function mortgageCalculator(principal, interest, periods){
+
+    const n1 = (1 + monthlyInterestRate)**periods; {
+        console.log(n1);
+    }
+    
+    const numerator = (principal * n1 * monthlyInterestRate); {
+        console.log(numerator);
+    }
+    
+    const denominator = (n1 - 1); {
+        console.log(denominator);
+    }
+
+    let monthlyRate = (numerator / denominator); {
+    }
+    if (creditScore > 740) {
+        monthlyRate = (monthlyRate * 0.95);
+        return `${name}, your monthly rate is ${monthlyRate}`;
+    
+    } else if (creditScore < 660) { //credit score is nott defined.//
+        monthlyRate = (monthlyRate * 1.05);
+        return `${name}, your monthly rate is ${monthlyRate}`;
+
+    }
+    else if (creditScore >= 660 &&  creditScore <= 40) {
+        monthlyRate = (monthlyRate * 1.00);
+
+    }
+    return `${name}, your monthly rate is ${monthlyRate}`;
+    }
+    mortgageCalculator(principal, interest, periods); {
+
+        
+    }
+    var output = mortgageCalculator(principal, interest, periods);
+    console.log(output);
 
 
 // 🏡 Task 6: Loops
